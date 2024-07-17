@@ -4,7 +4,7 @@
         
 <mapper namespace="com.docker.springboot.dao.HelloDAO">
 	
-	<select id="getName">
-		select customer_name from cutomers where customer_id = 1;
+	<select id="getName" resultType="String">
+		select customer_name from customers where customer_id = 1;
 	</select>
 </mapper>

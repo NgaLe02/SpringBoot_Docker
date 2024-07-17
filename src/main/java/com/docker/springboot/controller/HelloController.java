@@ -17,6 +17,6 @@ public class HelloController {
 	@GetMapping("/hello")
 	public String getHello() {
 		String name = helloService.getName();
-		return "Tui là" + name +  "nè";
+		return "Tui là " + name +  " nè";
 	}
 }
