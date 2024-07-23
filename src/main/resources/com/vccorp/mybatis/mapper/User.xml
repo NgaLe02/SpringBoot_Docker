@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.docker.springboot.dao.UserDAO">
+	<resultMap id="userMap"
+		type="com.docker.springboot.model.User">
+		<id property="userId" column="customer_id" />
+		<result property="name" column="customer_name" />
+		<result property="email" column="email" />
+		
+	</resultMap>
+	
+	<insert id="insertUser" parameterType="com.docker.springboot.model.User" >
+		INSERT INTO customers
+		(
+		customer_id,
+		customer_name,
+		email
+		)
+		VALUES
+		(
+		#{userId},
+		#{name},
+		#{email}
+		);
+	</insert>
+	
+	<select id="getUser" parameterType="Integer" resultType="com.docker.springboot.model.User">
+		select customer_id as userId, customer_name as name, email from customers where customer_id = #{id};
+	</select>
+	
+	
+	<select id="getAllUser" resultMap="userMap" >
+		select * from customers;
+	</select>
+</mapper>
