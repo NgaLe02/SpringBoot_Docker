@@ -11,7 +11,7 @@
 		
 	</resultMap>
 	
-	<insert id="insertUser" parameterType="com.docker.springboot.model.User" useGeneratedKeys="true"  keyProperty="userUid">
+	<insert id="insertUser" parameterType="com.docker.springboot.model.User" useGeneratedKeys="true"  keyProperty="userId" >
 		INSERT INTO customers
 		(
 		customer_name,
